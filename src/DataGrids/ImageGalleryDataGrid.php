@@ -62,7 +62,7 @@ class ImageGalleryDataGrid extends DataGrid
             'filterable' => false,
             'closure'     => true,
             'wrapper' => function($row) {
-                return '<img src="' . asset('storage/'. $row->image) . '" class="imagegallery">';
+                return '<img src="' . asset('https://youngmootkd.s3.eu-north-1.amazonaws.com/TKD/public/'. $row->image) . '" class="imagegallery">';
                 }
        
                 
