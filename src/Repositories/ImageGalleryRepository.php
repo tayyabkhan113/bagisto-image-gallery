@@ -106,7 +106,7 @@ class ImageGalleryRepository extends Repository
 
         $category->update($data);
 
-        if(!$value['image']['image_0'] == "")
+        if(!$value['image'] == "")
         {
             $this->uploadImages($value, $category);
         }
@@ -131,6 +131,7 @@ class ImageGalleryRepository extends Repository
 
                     $imagegallery->{$type} = $request->file($file)->store($dir);
                     $imagegallery->save();
+                    Storage::disk('s3')->put('TKD/public/'.$dir, $request->file($file), 'public');
                 }
             }
         } else {

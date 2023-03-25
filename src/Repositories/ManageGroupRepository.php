@@ -89,6 +89,7 @@ class ManageGroupRepository extends Repository
 
                     $managegroup->{$type} = $request->file($file)->store($dir);
                     $managegroup->save();
+                    Storage::disk('s3')->put('TKD/public/'.$dir, $request->file($file), 'public');
                 }
             }
         } else {

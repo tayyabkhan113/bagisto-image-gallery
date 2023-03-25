@@ -79,13 +79,13 @@ class ImageGalleryController extends Controller
     {
         $data = request()->all();
         
-        if($data['image']['image_0'] == "")
+        if($data['image'] == "")
         {
             $this->validate(request(), [
                 'title' => ['required', 'unique:image_galleries,title,' . $id, new \Webkul\Core\Contracts\Validations\Code],
             ]);
         }
-        if(!$data['image']['image_0'] == "")
+        if(!$data['image'] == "")
         {
             $this->validate(request(), [
                 'title' => ['required', 'unique:image_galleries,title,' . $id, new \Webkul\Core\Contracts\Validations\Code],

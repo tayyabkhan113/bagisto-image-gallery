@@ -145,6 +145,7 @@ class ManageGalleryRepository extends Repository
 
                     $managegallery->{$type} = $request->file($file)->store($dir);
                     $managegallery->save();
+                    Storage::disk('s3')->put('TKD/public/'.$dir, $request->file($file), 'public');
                 }
             }
         } else {
