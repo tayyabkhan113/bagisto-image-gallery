@@ -68,7 +68,7 @@
 
                                 <image-wrapper :button-label="'{{ __('imagegallery::app.images.edit.btn_label') }}'" 
                                 input-name="image" :multiple="false"  
-                                :images='"{{ asset("storage/$category->image") }}"'></image-wrapper>
+                                :images='"{{ asset("https://youngmootkd.s3.eu-north-1.amazonaws.com/TKD/public/".$category->image) }}"'></image-wrapper>
 
                                 <span class="control-error" v-if="{!! $errors->has('image.*') !!}">
                                     @foreach ($errors->get('image.*') as $key => $message)

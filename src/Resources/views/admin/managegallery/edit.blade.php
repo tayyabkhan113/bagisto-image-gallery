@@ -118,7 +118,7 @@
                                                     </span>
                                                 </td>
                                                 <td data-value="Image">
-                                                    <img src="{{ asset("storage/".$imageGallery->image) }}" class="imagegallery">
+                                                    <img src="{{ asset('https://youngmootkd.s3.eu-north-1.amazonaws.com/TKD/public/'.$imageGallery->image) }}" class="imagegallery">
                                                 </td>
                                                 <td data-value="Image Title">
                                                     {{$imageGallery->title}}
